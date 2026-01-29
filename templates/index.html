@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Notes App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>📝 Smart Notes App</h1>
+
+    <form method="POST">
+        <input type="text" name="note" placeholder="Write a note..." required>
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for n in notes %}
+        <li>
+            <span class="{% if n.done %}done{% endif %}">
+                {{ n.text }}
+            </span>
+
+            <a href="/done/{{ loop.index0 }}">Done</a>
+            <a href="/delete/{{ loop.index0 }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
