@@ -1,13 +1,13 @@
-body {
-  font-family: Arial;
-  margin: 40px;
-  background: #f7f7f7;
+li {
+  margin: 8px 0;
 }
 
-h1 {
-  color: #222;
+.done {
+  text-decoration: line-through;
+  color: gray;
 }
 
-input, button {
-  padding: 8px;
+button {
+  margin-left: 10px;
+  cursor: pointer;
 }
