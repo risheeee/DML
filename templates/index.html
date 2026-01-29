@@ -1,28 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Smart Notes App</title>
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+  <title>Notes App</title>
+
+  <!-- Correct Flask CSS Link -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>📝 Smart Notes App</h1>
+  <div class="container">
+    <h1>📝 Notes App</h1>
 
     <form method="POST">
-        <input type="text" name="note" placeholder="Write a note..." required>
-        <button type="submit">Add</button>
+      <input type="text" name="note" placeholder="Write a note..." required>
+      <button type="submit">Add</button>
     </form>
 
     <ul>
-        {% for n in notes %}
-        <li>
-            <span class="{% if n.done %}done{% endif %}">
-                {{ n.text }}
-            </span>
+      {% for n in notes %}
+      <li>
+        <span class="note-text {% if n.done %}done{% endif %}">
+          {{ n.text }}
+        </span>
 
-            <a href="/done/{{ loop.index0 }}">Done</a>
-            <a href="/delete/{{ loop.index0 }}">Delete</a>
-        </li>
-        {% endfor %}
+        <div class="actions">
+          <a href="/done/{{ loop.index0 }}" class="done-btn">Done</a>
+          <a href="/delete/{{ loop.index0 }}" class="delete-btn">Delete</a>
+        </div>
+      </li>
+      {% endfor %}
     </ul>
+  </div>
 </body>
 </html>
