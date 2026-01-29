@@ -115,3 +115,23 @@ li:hover {
 .actions a:hover {
   opacity: 0.8;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  padding: 8px;
+  background: #f0f2ff;
+  border-radius: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #667eea;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+

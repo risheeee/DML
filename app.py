@@ -22,5 +22,15 @@ def delete(id):
     notes.pop(id)
     return redirect("/")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/stats")
+def stats():
+    total = len(notes)
+    completed = len([n for n in notes if n["done"]])
+    return render_template("stats.html", total=total, completed=completed)
+
 if __name__ == "__main__":
     app.run(debug=True)

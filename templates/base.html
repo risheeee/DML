@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Notes App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    
+    <nav class="navbar">
+      <a href="/">Home</a>
+      <a href="/stats">Stats</a>
+      <a href="/about">About</a>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+  </div>
+</body>
+</html>
